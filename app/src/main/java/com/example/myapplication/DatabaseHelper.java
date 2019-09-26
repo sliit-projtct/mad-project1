@@ -10,7 +10,7 @@ import androidx.annotation.Nullable;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    private static final String DATABASE_NAME = "HouseRent.db";
+    private static final String DATABASE_NAME = "HouseRent2.db";
     private static final String TABLE_NAME ="Reservation";
     private static final String COL_1 ="Rno";
     private static final String COL_2 ="Name";
@@ -18,12 +18,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String COL_4 ="HouseNo";
     private static final String COL_5 ="Duration";
 
-    //Suneth
+
 
     public static final String TABLE_NAME_FB="feedback_table";
     public static final String COLUMN_FB1="ID";
     public static final String COLUMN_FB2="NAME";
     public static final String COLUMN_FB3="FEEDBACK";
+
+    public static final String TABLE_NAME_AD="advertisement_table";
+    public static final String COLUMN_AD1="ID";
+    public static final String COLUMN_AD2="LOCATION";
+    public static final String COLUMN_AD3="DESCRIPTION";
+    public static final String COLUMN_AD4="MOBILE";
+    public static final String COLUMN_AD5="EMAIL";
+
 
     private static final  String TABLE_TWO_NAME = "CreditCard_table";
     private static final  String COL_2_1 = "CID";
@@ -31,6 +39,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final  String COL_2_3 = "CDATE";
     private static final  String COL_2_4 = "CKEY";
     private static final  String COL_2_5 = "CNAME";
+
+
 
 
 
@@ -44,6 +54,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         sqLiteDatabase.execSQL(" create table " + TABLE_NAME + " (Rno INTEGER PRIMARY KEY AUTOINCREMENT , Name TEXT , City TEXT , HouseNo INTEGER , Duration INTEGER  ) ");
         sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_NAME_FB + "(ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT, FEEDBACK TEXT)");
+        sqLiteDatabase.execSQL("create table " + TABLE_NAME_AD + "(ID INTEGER PRIMARY KEY AUTOINCREMENT, LOCATION TEXT, DESCRIPTION TEXT, MOBILE INTEGER, EMAIL TEXT)");
+
+
 
         sqLiteDatabase.execSQL("CREATE TABLE user(email text  primary key,password text)");
     }
@@ -53,7 +66,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS "+ TABLE_NAME_FB);
-
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS "+ TABLE_NAME_AD);
 
 
 
@@ -97,6 +110,23 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
+    public boolean createAD(String location, String description, String mobile, String email){
+        SQLiteDatabase sqLiteDatabase=this.getWritableDatabase();
+        ContentValues contentValues=new ContentValues();
+        contentValues.put(COLUMN_AD2, location);
+        contentValues.put(COLUMN_AD3, description);
+        contentValues.put(COLUMN_AD4, mobile);
+        contentValues.put(COLUMN_AD5, email);
+        long results=sqLiteDatabase.insert(TABLE_NAME_AD,null,contentValues);
+        if (results==-1)
+            return false;
+        else
+            return true;
+
+    }
+
+
+
     public Cursor getAllData(){
 
         SQLiteDatabase sqLiteDatabase=this.getWritableDatabase();
@@ -109,6 +139,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor res = sqLiteDatabase.rawQuery("SELECT * FROM " + TABLE_NAME_FB, null);
         return res;
     }
+
+    public Cursor getAllAD(){
+        SQLiteDatabase sqLiteDatabase=this.getWritableDatabase();
+        Cursor res = sqLiteDatabase.rawQuery("SELECT * FROM " + TABLE_NAME_AD, null);
+        return res;
+    }
+
+
 
 
     public boolean updateData(String rno,String name ,String city ,String hNo ,String duration ){
@@ -140,6 +178,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
+    public boolean updateAD(String id, String location, String description, String mobile, String email){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(COLUMN_AD1, id);
+        contentValues.put(COLUMN_AD2, location);
+        contentValues.put(COLUMN_AD3, description);
+        contentValues.put(COLUMN_AD4, mobile);
+        contentValues.put(COLUMN_AD5, email);
+        sqLiteDatabase.update(TABLE_NAME_AD, contentValues, "ID=?", new String[] {id});
+        return true;
+
+    }
+
     public boolean deleteData(String rno,String name ,String city ,String hNo ,String duration ){
 
         SQLiteDatabase sqLiteDatabase=this.getReadableDatabase();
@@ -160,6 +211,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public Integer deleteFeedback(String id){
         SQLiteDatabase sqLiteDatabase=this.getWritableDatabase();
         return sqLiteDatabase.delete(TABLE_NAME_FB, "ID = ?", new String[] {id});
+
+
+    }
+
+    public Integer deleteAD(String id){
+        SQLiteDatabase sqLiteDatabase=this.getWritableDatabase();
+        return sqLiteDatabase.delete(TABLE_NAME_AD, "ID = ?", new String[] {id});
 
 
     }

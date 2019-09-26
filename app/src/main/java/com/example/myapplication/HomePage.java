@@ -17,7 +17,7 @@ public class HomePage extends AppCompatActivity{
 
 
 
-    Button rent,pay,feedback;
+    Button rent,pay,feedback,ad;
     ImageView imageView2;
     TextView textView;
     Animation fromtopbottom;
@@ -31,6 +31,7 @@ public class HomePage extends AppCompatActivity{
         rent=(Button)findViewById(R.id.rent);
         pay=(Button)findViewById(R.id.pay);
         feedback=(Button)findViewById(R.id.feedback);
+        ad=(Button)findViewById(R.id.ad);
         textView=(TextView)findViewById(R.id.textView);
         imageView2=(ImageView) findViewById(R.id.imageView2);
 
@@ -40,6 +41,7 @@ public class HomePage extends AppCompatActivity{
         rent.startAnimation(fromtopbottom);
         pay.startAnimation(fromtopbottom);
         feedback.startAnimation(fromtopbottom);
+        ad.startAnimation(fromtopbottom);
 
 
 
@@ -84,6 +86,20 @@ public class HomePage extends AppCompatActivity{
                 startActivity(a);
             }
         });
+
+        //AD
+        ad.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick (View view){
+
+
+                Intent a = new Intent( HomePage.this, AddAdActivity.class);
+                a.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                startActivity(a);
+            }
+        });
+
+
     }
 
 
