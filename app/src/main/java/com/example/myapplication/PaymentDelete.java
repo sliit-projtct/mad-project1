@@ -16,6 +16,7 @@ public class PaymentDelete extends AppCompatActivity {
     Button buttonPay;
     EditText date,houseId,phone,paymentID;
     DatabaseHelper mydb;
+    //Test
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
