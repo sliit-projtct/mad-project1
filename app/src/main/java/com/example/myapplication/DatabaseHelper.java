@@ -223,7 +223,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
 
-
     public Cursor getuserSetting(String user){
         SQLiteDatabase sqLiteDatabase=this.getWritableDatabase();
         Cursor res = sqLiteDatabase.rawQuery("SELECT * FROM  user where email =?",new String[]{user});
