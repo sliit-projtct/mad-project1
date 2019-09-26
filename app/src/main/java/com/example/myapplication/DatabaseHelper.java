@@ -207,14 +207,3 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 //  ***********************Udara***********************
 
-    public boolean updateData( String CID , String CNUMBER ,String CDATE , String CKEY , String CNAME){
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(COL_2_1,CID);
-        contentValues.put(COL_2_2,CNUMBER);
-        contentValues.put(COL_2_3,CDATE);
-        contentValues.put(COL_2_4,CKEY);
-        contentValues.put(COL_2_5,CNAME);
-        db.update(TABLE_TWO_NAME, contentValues ,"CID = ?",  new String[] {CID});
-        return true;
-    }
