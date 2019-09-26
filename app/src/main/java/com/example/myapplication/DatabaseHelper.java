@@ -10,7 +10,7 @@ import androidx.annotation.Nullable;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    private static final String DATABASE_NAME = "HouseRent.db";
+    private static final String DATABASE_NAME = "House2.db";
     private static final String TABLE_NAME ="Reservation";
     private static final String COL_1 ="Rno";
     private static final String COL_2 ="Name";
@@ -45,7 +45,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(" create table " + TABLE_NAME + " (Rno INTEGER PRIMARY KEY AUTOINCREMENT , Name TEXT , City TEXT , HouseNo INTEGER , Duration INTEGER  ) ");
         sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_NAME_FB + "(ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT, FEEDBACK TEXT)");
 
-        sqLiteDatabase.execSQL("CREATE TABLE user(email text  primary key,password text)");
+        sqLiteDatabase.execSQL("CREATE TABLE user(email text  primary key,password text ,name text,nic text,address Text,phone text)");
+
+        //sqLiteDatabase.execSQL("CREATE TABLE AccountSettings(ID INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT,nic TEXT,address TEXT,phone TEXT)");
     }
 
     @Override
@@ -59,6 +61,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS user");
 
+
+        //sqLiteDatabase.execSQL("DROP TABLE IF EXISTS AccountSettings");
         onCreate(sqLiteDatabase);
     }
 
@@ -168,12 +172,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     //#####################chanaka####################
 
-    public boolean insert(String email,String password){
+    public boolean insert(String email,String password,String name,String nic,String phone){
 
         SQLiteDatabase db = getReadableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("email",email);
         contentValues.put("password",password);
+        contentValues.put("name",name);
+        contentValues.put("address",nic);
+        contentValues.put("phone",phone);
         long ins = db.insert("user", null,contentValues);
         if(ins == -1)
             return false;
@@ -210,24 +217,33 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     //***************************************************************************
 
 
-    public boolean insertaccountSettings(String name,String nic,String address,String phone){
-
-        SQLiteDatabase db = getReadableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put("name",name);
-        contentValues.put("nic",nic);
-        contentValues.put("address",address);
-        contentValues.put("phone",phone);
-        long ins = db.insert("AccountSettings", null,contentValues);
-        if(ins == -1)
-            return false;
-        else
-            return  true;
 
 
+
+
+
+
+
+    public Cursor getuserSetting(String user){
+        SQLiteDatabase sqLiteDatabase=this.getWritableDatabase();
+        Cursor res = sqLiteDatabase.rawQuery("SELECT * FROM  user where email =?",new String[]{user});
+        return res;
     }
 
 
+    public boolean updateUserSetting(String email, String name, String nic,String address,String phone){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("email", email);
+        contentValues.put("name", name);
+        contentValues.put("nic", nic);
+        contentValues.put("address", address);
+        contentValues.put("phone", phone);
+
+        sqLiteDatabase.update("user",contentValues, "email=?", new String[] {email});
+        return true;
+
+    }
 
 
 

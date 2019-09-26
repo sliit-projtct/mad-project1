@@ -48,11 +48,12 @@ public class HomePage extends AppCompatActivity{
         Loguser= findViewById(R.id.txtlogedUser);
 
         Intent intent = getIntent();
-        String LoggedUser = intent.getExtras().getString("email");
+        final String LoggedUser = intent.getExtras().getString("email");
 
 
         Loguser.setText("User : "+LoggedUser);
 
+        final String LoggedUserPassMsg = LoggedUser;
 
 
 //*******************************************************
@@ -62,7 +63,7 @@ public class HomePage extends AppCompatActivity{
             public void onClick(View view) {
 
                 Intent i = new Intent(HomePage.this,userSetting.class);
-                //i.putExtra("email",LoggedUser);
+                i.putExtra("email",LoggedUserPassMsg);
                 startActivity(i);
 
             }

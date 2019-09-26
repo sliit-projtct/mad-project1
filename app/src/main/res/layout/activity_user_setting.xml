@@ -73,5 +73,30 @@
 
         android:text="Submit" />
 
+    <Button
+        android:id="@+id/show"
+        android:layout_width="190dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:background=" #99e600"
+
+        android:text="Show" />
+
+    <Button
+        android:id="@+id/Update"
+        android:layout_width="190dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:background=" #99e600"
+
+        android:text="Update" />
+
+    <TextView
+        android:id="@+id/txtlogedUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+
+
 
 </LinearLayout>

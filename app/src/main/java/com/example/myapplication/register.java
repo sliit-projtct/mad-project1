@@ -19,6 +19,9 @@ public class register extends AppCompatActivity {
     DatabaseHelper db;
 
     EditText ed1,ed2,ed3;
+    EditText name,nic,phone;
+
+
 
     TextView login;
 
@@ -35,6 +38,12 @@ public class register extends AppCompatActivity {
         ed2 = (EditText)findViewById(R.id.password);
         ed3 = (EditText)findViewById(R.id.conpass);
         b1 = (Button) findViewById(R.id.btn1);
+
+
+
+        name =(EditText)findViewById(R.id.name);
+        nic  =(EditText)findViewById(R.id.nic);
+        phone =(EditText)findViewById(R.id.phone);
 
 
         login = (TextView)findViewById(R.id.textView_login);
@@ -62,6 +71,10 @@ public class register extends AppCompatActivity {
                 String s2 = ed2.getText().toString();
                 String s3 = ed3.getText().toString();
 
+                String fullname  = name.getText().toString();
+                String  NIC       = nic.getText().toString();
+                String Phone      = phone.getText().toString();
+
                 if(s1.equals("")||s2.equals("")||s3.equals("")){
                     Toast.makeText(getApplicationContext(),"Fields empty",Toast.LENGTH_SHORT).show();
                 }
@@ -81,7 +94,7 @@ public class register extends AppCompatActivity {
                                 if (s2.equals(s3)) {
                                     Boolean chekemail = db.chkemail(s1);
                                     if (chekemail == true) {
-                                        Boolean insert = db.insert(s1, s2);
+                                        Boolean insert = db.insert(s1, s2,fullname,NIC,Phone);
 
                                         if (insert == true) {
                                             Toast.makeText(getApplicationContext(), "Registerd successfully", Toast.LENGTH_SHORT).show();
