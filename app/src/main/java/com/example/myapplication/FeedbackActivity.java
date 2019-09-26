@@ -17,6 +17,7 @@ public class FeedbackActivity extends AppCompatActivity {
     DatabaseHelper myDb;
     EditText editFbID,editName,editFeedback;
     Button buttonSend,buttonShow,buttonUpdate,buttonDelete;
+    //feed
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
