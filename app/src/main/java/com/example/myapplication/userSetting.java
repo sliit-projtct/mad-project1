@@ -132,7 +132,7 @@ public class userSetting extends AppCompatActivity {
 
                 String name = ed1.getText().toString();
                 String nic = ed2.getText().toString();
-                String address = ed3.getText().toString();
+
                 String phone = ed4.getText().toString();
 
 
@@ -141,6 +141,7 @@ public class userSetting extends AppCompatActivity {
                 Intent intent2 = getIntent();
                  String LoggedUser1 = intent2.getExtras().getString("email");
 
+
                // this.username =  LoggedUser;
 
 
@@ -148,7 +149,7 @@ public class userSetting extends AppCompatActivity {
 
 
 
-                    boolean isUpdated = myDB.updateUserSetting(LoggedUser1,name,nic,address,phone);
+                    boolean isUpdated = myDB.updateUserSetting(LoggedUser1,name,nic,phone);
 
                     if (isUpdated == true)
                         Toasty.success(userSetting.this, " Update Successfully", Toast.LENGTH_LONG).show();

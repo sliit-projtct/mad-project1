@@ -193,6 +193,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
+
+
     //checking email if exists;
     public boolean chkemail(String email){
         SQLiteDatabase db = this.getReadableDatabase();
@@ -201,6 +203,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         else return  true;
 
     }
+
+
 
     //checking the email and password ;
 
@@ -233,13 +237,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public boolean updateUserSetting(String email, String name, String nic,String address,String phone){
+    public boolean updateUserSetting(String email, String name, String nic,String phone){
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("email", email);//
         contentValues.put("name", name);
         contentValues.put("nic", nic);
-        contentValues.put("address", address);
+
         contentValues.put("phone", phone);
 
         sqLiteDatabase.update("user",contentValues, "email=?", new String[] {email});
