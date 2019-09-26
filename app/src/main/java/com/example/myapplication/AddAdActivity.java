@@ -91,7 +91,7 @@ public class AddAdActivity extends AppCompatActivity {
                 Cursor res=myDb.getAllAD();
                 if (res.getCount()==0){
                     //show msg
-                    showMessage("Error", "No DAta Found");
+                    showMessage("Error", "No Data Found!!!");
                     return;
                 }
                 StringBuffer buffer= new StringBuffer();
