@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="334dp"
+        android:layout_height="135dp"
+        android:layout_gravity="center"
+        android:src="@mipmap/visa_mastercard_logo" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:orientation="horizontal"
+        android:background="#07161616">
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".09"
+            android:src="@mipmap/tomorrow" />
+
+        <EditText
+            android:id="@+id/CNUMBER"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="17dp"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:ems="100"
+            android:hint="Card Number"
+            android:inputType="number" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="30dp"
+        android:background="#07161616">
+
+        <EditText
+            android:id="@+id/CDATE"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="Date"
+            android:inputType="date" />
+
+        <EditText
+            android:id="@+id/CKEY"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Security code"
+            android:inputType="numberPassword" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/CNAME"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="20dp"
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="textPersonName"
+        />
+
+    <EditText
+        android:id="@+id/editText5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Last name"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/byn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="90dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginRight="90dp"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:backgroundTintMode="src_over"
+        android:text="Buy now" />
+
+
+</LinearLayout>

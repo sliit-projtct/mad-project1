@@ -30,8 +30,8 @@ public class HomePage extends AppCompatActivity{
 
         rent=(Button)findViewById(R.id.rent);
         pay=(Button)findViewById(R.id.pay);
-        feedback=(Button)findViewById(R.id.feedback);
-        ad=(Button)findViewById(R.id.ad);
+        feedback=(Button)findViewById(R.id.feedback1);
+        ad=(Button)findViewById(R.id.ad1);
         textView=(TextView)findViewById(R.id.textView);
         imageView2=(ImageView) findViewById(R.id.imageView2);
 
@@ -91,13 +91,23 @@ public class HomePage extends AppCompatActivity{
         ad.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick (View view){
-
-
                 Intent a = new Intent( HomePage.this, AddAdActivity.class);
                 a.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(a);
             }
         });
+
+        //Pay
+        pay.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent a = new Intent(HomePage.this, Home.class);
+                        a.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                        startActivity(a);
+                    }
+                }
+        );
 
 
     }

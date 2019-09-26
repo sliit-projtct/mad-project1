@@ -276,6 +276,8 @@ public class MainActivity extends AppCompatActivity implements android.text.Text
 
                        if(inserted == true) {
                            Toast.makeText(MainActivity.this, "Data inserted", Toast.LENGTH_LONG).show();
+                           Intent intent = new Intent(MainActivity.this,Payment.class);
+                           startActivity(intent);
                        }
                        else {
 

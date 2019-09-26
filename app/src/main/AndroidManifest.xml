@@ -9,7 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AddAdActivity"></activity>
+        <activity android:name=".PayPalPay"></activity>
+        <activity android:name=".PaymentUpdate" />
+        <activity android:name=".PaymentList" />
+        <activity android:name=".PaymentDelete" />
+        <activity android:name=".Payment" />
+        <activity android:name=".ChoosePay" />
+        <activity android:name=".Home" />
+        <activity android:name=".FirstActivity" />
+        <activity android:name=".CardUpdate" />
+        <activity android:name=".AddAdActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".register" />
         <activity android:name=".FeedbackActivity" />

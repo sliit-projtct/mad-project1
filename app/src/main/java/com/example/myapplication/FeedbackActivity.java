@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 import es.dmoral.toasty.Toasty;
 
+import static com.example.myapplication.R.layout.activity_feedback;
+
 public class FeedbackActivity extends AppCompatActivity {
 
     DatabaseHelper myDb;
@@ -22,7 +24,8 @@ public class FeedbackActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_feedback);
+        setContentView(activity_feedback);
+
         myDb = new DatabaseHelper(this);
 
         editFbID=findViewById(R.id.editFbId);
@@ -88,7 +91,7 @@ public class FeedbackActivity extends AppCompatActivity {
                 }
 
 //                    Toast.makeText(FeedbackActivity.this, "Feedback Fail",Toast.LENGTH_LONG).show();
-                    Toasty.error(FeedbackActivity.this, "Feedback Fail", Toast.LENGTH_LONG).show();
+//                    Toasty.error(FeedbackActivity.this, "Feedback Fail", Toast.LENGTH_LONG).show();
 
 
                     boolean isSend=myDb.sendFeedback(editName.getText().toString(),editFeedback.getText().toString());

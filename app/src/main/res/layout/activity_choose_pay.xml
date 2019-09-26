@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="40dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    tools:context=".ChoosePay">
+
+    <LinearLayout
+        android:layout_width="296dp"
+        android:layout_height="118dp"
+        android:layout_gravity="center"
+        android:background="#07161616"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/credit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Credit Card Payment" />
+
+        <Button
+            android:id="@+id/paypal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="PayPal Payment"
+            android:layout_marginTop="5dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>
