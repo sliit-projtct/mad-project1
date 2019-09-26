@@ -27,6 +27,7 @@ public class Login extends AppCompatActivity {
         e1 =(EditText)findViewById(R.id.email);
         e2 = (EditText)findViewById(R.id.pass);
         b1 = (Button)findViewById(R.id.btn1);
+
         register = (TextView)findViewById(R.id.register);
 
 

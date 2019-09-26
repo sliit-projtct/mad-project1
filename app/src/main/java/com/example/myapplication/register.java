@@ -69,6 +69,7 @@ public class register extends AppCompatActivity {
             public void onClick(View view) {
                 String s1 = ed1.getText().toString();
                 String s2 = ed2.getText().toString();
+
                 String s3 = ed3.getText().toString();
 
                 String fullname  = name.getText().toString();

@@ -98,7 +98,14 @@
 
 
 
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="190dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:background=" #99e600"
 
+        android:text="register" />
 
 
 
