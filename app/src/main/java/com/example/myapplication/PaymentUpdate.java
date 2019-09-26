@@ -14,6 +14,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Calendar;
 
+import es.dmoral.toasty.Toasty;
+
 public class PaymentUpdate extends AppCompatActivity {
 
     Button buttonPay;
@@ -85,10 +87,10 @@ public class PaymentUpdate extends AppCompatActivity {
                                 );
 
                                 if (isUpdated == true) {
-                                    Toast.makeText(PaymentUpdate.this, "Update successful", Toast.LENGTH_SHORT).show();
+                                    Toasty.success(PaymentUpdate.this, "Update successful", Toast.LENGTH_SHORT).show();
                                     openActivity();
                                 } else {
-                                    Toast.makeText(PaymentUpdate.this, "Not successful", Toast.LENGTH_SHORT).show();
+                                    Toasty.error(PaymentUpdate.this, "Not successful", Toast.LENGTH_SHORT).show();
                                 }
                             }
 

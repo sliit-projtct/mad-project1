@@ -17,6 +17,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Calendar;
 
+import es.dmoral.toasty.Toasty;
+
 public class FirstActivity extends AppCompatActivity {
 
     private EditText CardNumber, CardDate, CardKey, CardName;
@@ -123,13 +125,13 @@ public class FirstActivity extends AppCompatActivity {
         String cardCVV = CardKey.getText().toString();
 
         if (TextUtils.isEmpty(cardName)) {
-            Toast.makeText(FirstActivity.this, "Enter Valid Name", Toast.LENGTH_SHORT).show();
+            Toasty.error(FirstActivity.this, "Enter Valid Name", Toast.LENGTH_SHORT).show();
         } else if (TextUtils.isEmpty(cardNumber) || !isValid(cardNumber)) {
-            Toast.makeText(FirstActivity.this, "Enter Valid card number", Toast.LENGTH_SHORT).show();
+            Toasty.error(FirstActivity.this, "Enter Valid card number", Toast.LENGTH_SHORT).show();
         } else if (TextUtils.isEmpty(cardCVV)||cardCVV.length()<3) {
-            Toast.makeText(FirstActivity.this, "Enter valid security number", Toast.LENGTH_SHORT).show();
+            Toasty.error(FirstActivity.this, "Enter valid security number", Toast.LENGTH_SHORT).show();
         } else
-            Toast.makeText(FirstActivity.this, "Your card is added", Toast.LENGTH_LONG).show();
+            Toasty.success(FirstActivity.this, "Your card is added", Toast.LENGTH_LONG).show();
 
     }
 

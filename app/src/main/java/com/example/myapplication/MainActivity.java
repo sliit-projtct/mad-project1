@@ -262,7 +262,7 @@ public class MainActivity extends AppCompatActivity implements android.text.Text
 
                             if (n.equals("") || c.equals("") || h.equals("") || d.equals("")) {
 
-                                Toast.makeText(MainActivity.this, "Data feild can not be empty", Toast.LENGTH_LONG).show();
+                                Toast.makeText(MainActivity.this, "Data field can not be empty", Toast.LENGTH_LONG).show();
 
                                 return;
                             } else {

@@ -11,6 +11,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import es.dmoral.toasty.Toasty;
+
 public class PayPalPay extends AppCompatActivity {
 
 
@@ -39,7 +41,7 @@ public class PayPalPay extends AppCompatActivity {
 
                                           if (url.equals("https://www.example.com/cancel"))
                                           {
-                                              Toast.makeText(PayPalPay.this, "Payment is cancel", Toast.LENGTH_LONG).show();
+                                              Toasty.error(PayPalPay.this, "Payment is cancel", Toast.LENGTH_LONG).show();
                                               finish();
                                               try {
                                                   Thread.sleep(1000);
@@ -52,7 +54,7 @@ public class PayPalPay extends AppCompatActivity {
 
                                           else if (url.equals("https://www.example.com/success"))
                                           {
-                                              Toast.makeText(PayPalPay.this, "Payment is success", Toast.LENGTH_SHORT).show();
+                                              Toasty.success(PayPalPay.this, "Payment is success", Toast.LENGTH_SHORT).show();
                                               youCanDoWhatEverYouWantToDo();
                                           }
                                       }

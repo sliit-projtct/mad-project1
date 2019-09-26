@@ -14,6 +14,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Calendar;
 
+import es.dmoral.toasty.Toasty;
+
 public class CardUpdate extends AppCompatActivity {
 
     private EditText et1, et2, et3, et4, et5, et6;
@@ -108,12 +110,12 @@ public class CardUpdate extends AppCompatActivity {
                         );
                         if(deletedRows > 0)
                         {
-                            Toast.makeText(CardUpdate.this, "Data deleted", Toast.LENGTH_SHORT).show();
+                            Toasty.success(CardUpdate.this, "Data deleted", Toast.LENGTH_SHORT).show();
                             openActivity();
                         }
                         else
                         {
-                            Toast.makeText(CardUpdate.this, "Not deleted", Toast.LENGTH_SHORT).show();
+                            Toasty.error(CardUpdate.this, "Not deleted", Toast.LENGTH_SHORT).show();
                         }
                     }
                 }
