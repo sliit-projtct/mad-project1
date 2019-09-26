@@ -18,7 +18,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String COL_4 ="HouseNo";
     private static final String COL_5 ="Duration";
 
-    //Suneth
+    //Suneth//
 
     public static final String TABLE_NAME_FB="feedback_table";
     public static final String COLUMN_FB1="ID";
