@@ -19,6 +19,7 @@ public class FeedbackActivity extends AppCompatActivity {
     Button buttonSend,buttonShow,buttonUpdate,buttonDelete;
     //feed
     //feed1
+    //feed
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
