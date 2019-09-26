@@ -25,6 +25,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COLUMN_FB2="NAME";
     public static final String COLUMN_FB3="FEEDBACK";
 
+    private static final  String TABLE_TWO_NAME = "CreditCard_table";
+    private static final  String COL_2_1 = "CID";
+    private static final  String COL_2_2 = "CNUMBER";
+    private static final  String COL_2_3 = "CDATE";
+    private static final  String COL_2_4 = "CKEY";
+    private static final  String COL_2_5 = "CNAME";
 
 
 
@@ -201,3 +207,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 //  ***********************Udara***********************
 
+    public boolean updateData( String CID , String CNUMBER ,String CDATE , String CKEY , String CNAME){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(COL_2_1,CID);
+        contentValues.put(COL_2_2,CNUMBER);
+        contentValues.put(COL_2_3,CDATE);
+        contentValues.put(COL_2_4,CKEY);
+        contentValues.put(COL_2_5,CNAME);
+        db.update(TABLE_TWO_NAME, contentValues ,"CID = ?",  new String[] {CID});
+        return true;
+    }
