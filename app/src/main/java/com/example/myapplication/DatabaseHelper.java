@@ -203,6 +203,35 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     }
+
+
+
+
+    //***************************************************************************
+
+
+    public boolean insertaccountSettings(String name,String nic,String address,String phone){
+
+        SQLiteDatabase db = getReadableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("name",name);
+        contentValues.put("nic",nic);
+        contentValues.put("address",address);
+        contentValues.put("phone",phone);
+        long ins = db.insert("AccountSettings", null,contentValues);
+        if(ins == -1)
+            return false;
+        else
+            return  true;
+
+
+    }
+
+
+
+
+
+
 }
 
 //  ***********************Udara***********************

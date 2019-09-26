@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".userSetting"
+    android:orientation="vertical"
+    android:gravity="center"
+
+    android:background="#ffffff"
+
+    >
+
+
+
+
+    <EditText
+        android:id="@+id/fullname"
+        android:layout_width="190dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="50dp"
+        android:paddingLeft="2dp"
+
+
+        android:hint="Full name" />
+
+
+
+    <EditText
+        android:id="@+id/nic"
+        android:layout_width="190dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+
+
+        android:hint="NIC Number"
+
+        />
+
+
+
+    <EditText
+        android:id="@+id/address"
+        android:layout_width="190dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+
+
+        android:hint="Address"
+
+
+        />
+    <EditText
+        android:id="@+id/phone"
+        android:layout_width="190dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+
+
+        android:hint="Phone number"
+
+
+        />
+
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="190dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:background=" #99e600"
+
+        android:text="Submit" />
+
+
+</LinearLayout>

@@ -17,7 +17,7 @@ public class HomePage extends AppCompatActivity{
 
 
 
-    Button rent,pay,feedback;
+    Button rent,pay,feedback,accountsetting;
     ImageView imageView2;
     TextView textView;
     Animation fromtopbottom;
@@ -40,7 +40,7 @@ public class HomePage extends AppCompatActivity{
         rent.startAnimation(fromtopbottom);
         pay.startAnimation(fromtopbottom);
         feedback.startAnimation(fromtopbottom);
-
+        accountsetting =(Button)findViewById(R.id.btnAccountSetting);
 
 
         //Chanaka******************************
@@ -52,6 +52,24 @@ public class HomePage extends AppCompatActivity{
 
 
         Loguser.setText("User : "+LoggedUser);
+
+
+
+//*******************************************************
+
+        accountsetting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent i = new Intent(HomePage.this,userSetting.class);
+                //i.putExtra("email",LoggedUser);
+                startActivity(i);
+
+            }
+        });
+
+        //*********************************************************
+
 
         //****************************************************
 
