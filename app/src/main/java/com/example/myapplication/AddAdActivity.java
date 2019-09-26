@@ -63,16 +63,16 @@ public class AddAdActivity extends AppCompatActivity {
                     {
                         emailEdit.setError("Invalid email address");
 
+                    }else {
+                        /* Toast.makeText(AddAdActivity.this,"Something went Wrong",Toast.LENGTH_SHORT).show();*/
+
+                        boolean isCreate = myDb.createAD(locEdit.getText().toString(), desEdit.getText().toString(), mobEdit.getText().toString(), emailEdit.getText().toString());
+                        if (isCreate == true)
+                            Toasty.success(AddAdActivity.this, "AD Created Successfully", Toast.LENGTH_LONG).show();
+                        else
+                            Toasty.error(AddAdActivity.this, "AD Create Failed!!", Toast.LENGTH_LONG).show();
                     }
-                    /* Toast.makeText(AddAdActivity.this,"Something went Wrong",Toast.LENGTH_SHORT).show();*/
-
-                    boolean isCreate=myDb.createAD(locEdit.getText().toString(), desEdit.getText().toString(), mobEdit.getText().toString(), emailEdit.getText().toString());
-                    if (isCreate==true)
-                        Toasty.success(AddAdActivity.this, "AD Created Successfully", Toast.LENGTH_LONG).show();
-                    else
-                        Toasty.error(AddAdActivity.this, "AD Create Failed!!",Toast.LENGTH_LONG).show();
-
-                    clearControls();}
+                    }
 
             }
         });
