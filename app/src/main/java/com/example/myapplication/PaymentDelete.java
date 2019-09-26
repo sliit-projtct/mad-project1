@@ -9,6 +9,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import es.dmoral.toasty.Toasty;
+
 public class PaymentDelete extends AppCompatActivity {
 
     Button buttonPay;
@@ -40,12 +42,12 @@ public class PaymentDelete extends AppCompatActivity {
                         );
                         if(deletedRows > 0)
                         {
-                            Toast.makeText(PaymentDelete.this, "Data deleted", Toast.LENGTH_SHORT).show();
+                            Toasty.success(PaymentDelete.this, "Data deleted", Toast.LENGTH_SHORT).show();
                             openActivity();
                         }
                         else
                         {
-                            Toast.makeText(PaymentDelete.this, "Not deleted", Toast.LENGTH_SHORT).show();
+                            Toasty.error(PaymentDelete.this, "Not deleted", Toast.LENGTH_SHORT).show();
                         }
                     }
                 }
